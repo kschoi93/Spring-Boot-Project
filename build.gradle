@@ -13,23 +13,6 @@ repositories {
 	mavenCentral()
 }
 
-/**
- * npm install start
- */
-node {
-    version = '14.16.0'
-    download = true
-    nodeModulesDir = file("${projectDir}/src/main/resources/static")
-}
-
-task copyFrontLib(type: Copy) {
-    from "${projectDir}/src/main/resources/static"
-    into "${projectDir}/build/resources/main/static/."
-}
-
-copyFrontLib.dependsOn npmInstall
-compileJava.dependsOn copyFrontLib
-
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
@@ -43,13 +26,9 @@ dependencies {
 	// https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
 	implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.12.4'
 	// https://mvnrepository.com/artifact/org.json/json
-implementation group: 'org.json', name: 'json', version: '20210307'
-// https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple
-implementation group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1'
-// https://mvnrepository.com/artifact/eu.michael-simons/java-oembed
-implementation group: 'eu.michael-simons', name: 'java-oembed', version: '0.8.1'
-
-
+	implementation group: 'org.json', name: 'json', version: '20210307'
+	// https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple
+	implementation group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1'
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
