@@ -20,9 +20,7 @@ import org.apache.http.util.EntityUtils;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -30,14 +28,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-public class HomeController extends JSONParser {
+public class OembedController extends JSONParser {
 
     private static JSONParser jsonParser = null;
     private static List<String> lst = null;
     private static JSONArray jsonArray = null;
     private URL url;
-    @Autowired
-    private static ResourceLoader resourceLoader;
 
     // 프로바이더 데이터 map 생성
     public static void providerData() throws IOException {
@@ -149,7 +145,7 @@ public class HomeController extends JSONParser {
     }
 
     // oembed 리턴
-    @GetMapping("/oembedResponse")
+    @GetMapping("/oembed/api")
     @ResponseBody
     public String oembedResponse(@RequestParam("userUrlData") String userUrlData)
             throws ClientProtocolException, IOException {
@@ -195,7 +191,7 @@ public class HomeController extends JSONParser {
         return result;
     }
 
-    @GetMapping("/")
+    @GetMapping("/oembed")
     public String home(Model model) throws ClientProtocolException, IOException, URISyntaxException {
         // provider의 url 데이터들 넣어놓기
         providerData();
@@ -213,7 +209,7 @@ public class HomeController extends JSONParser {
         // schemes에 해당하는 url의 호스트를 가져와서 matches로 정규식을 사용해 확인 할 수 있다
         // 다만, 분석해본 결과 schemes가 없는 프로바이더들이 있어 사용하지 않았다.
 
-        return "home";
+        return "oembed";
     }
 
 }

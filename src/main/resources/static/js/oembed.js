@@ -3,7 +3,7 @@ function requestUrl() {
     const userUrlData = document.getElementById('urlText').value;
     //oembedResponse에서 데이터 response    
     
-    fetch('oembedResponse?userUrlData='+userUrlData)
+    fetch('oembed/api?userUrlData='+userUrlData)
         .then((resolvedData) => {
             resolvedData.json()
                 .then((json) =>{
