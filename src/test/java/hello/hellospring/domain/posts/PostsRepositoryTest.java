@@ -46,20 +46,21 @@ public class PostsRepositoryTest {
 
     }
 
-    @Test
-    public void BaseTimeEntity_등록() {
-        // given
-        LocalDateTime now = LocalDateTime.now();
+    // @Test
+    // public void BaseTimeEntity_등록() {
+    // // given
+    // LocalDateTime now = LocalDateTime.now();
 
-        postsRepository.save(Posts.builder().title("테스트 게시글").content("테스트 본문").author("kyungsik@gmail.com").build());
+    // postsRepository.save(Posts.builder().title("테스트 게시글").content("테스트
+    // 본문").author("kyungsik@gmail.com").build());
 
-        // when
-        List<Posts> postsList = postsRepository.findAll();
+    // // when
+    // List<Posts> postsList = postsRepository.findAll();
 
-        // then
-        Posts posts = postsList.get(0);
-        assertTrue(posts.getCreatedDate().isAfter(now));
-        assertTrue(posts.getModifiedDate().isAfter(now));
-    }
+    // // then
+    // Posts posts = postsList.get(0);
+    // assertTrue(posts.getCreatedDate().isAfter(now));
+    // assertTrue(posts.getModifiedDate().isAfter(now));
+    // }
 
 }
