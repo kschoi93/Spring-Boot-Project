@@ -147,7 +147,7 @@ public class OembedController extends JSONParser {
     // oembed 리턴
     @GetMapping("/oembed/api")
     @ResponseBody
-    public String oembedResponse(@RequestParam("userUrlData") String userUrlData)
+    public String oembedResponse(@RequestParam("userUrlData") String userUrlData, Model model)
             throws ClientProtocolException, IOException {
         String result = "";
         try {
@@ -195,7 +195,6 @@ public class OembedController extends JSONParser {
     public String home(Model model) throws ClientProtocolException, IOException, URISyntaxException {
         // provider의 url 데이터들 넣어놓기
         providerData();
-
         // providers.json 데이터 가져오기
         // parser : try catch 해줘야 함
         // 현재 방식 -------------------------------------------------

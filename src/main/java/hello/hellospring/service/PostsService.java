@@ -4,7 +4,7 @@ import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
 
-import hello.hellospring.domain.posts.PostsRepository;
+import hello.hellospring.domain.repository.PostsRepository;
 import hello.hellospring.dto.posts.PostsSaveRequestDto;
 import lombok.AllArgsConstructor;
 

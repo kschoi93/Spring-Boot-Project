@@ -10,9 +10,10 @@ a:link {
 }
 
 header {
-  width: 100%;
+  width: 1200px;
   height: 180px;
   background-color: #2eaab7;
+  margin: 0 auto;
 }
 
 #title {
@@ -21,6 +22,7 @@ header {
   line-height: 120px;
   text-align: center;
   color: white;
+  margin: 0 auto;
   font-size: 30px;
   font-weight: bold;
 }
@@ -51,7 +53,8 @@ header {
 }
 
 article {
-  width: 100%;
+  width: 1200px;
+  margin: 0 auto;
   overflow: auto;
   background-color: #eee;
 }

@@ -23,9 +23,12 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.20'
 	implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.25'
+
 	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '2.5.2'
 	implementation group: 'org.hibernate', name: 'hibernate-core', version: '5.5.3.Final'
 	implementation group: 'org.hibernate', name: 'hibernate-entitymanager', version: '5.5.3.Final'
+	implementation group: 'com.querydsl', name: 'querydsl-jpa', version: '4.4.0'
+	implementation group: 'com.querydsl', name: 'querydsl-apt', version: '4.4.0'
 
 
 	implementation group: 'eu.michael-simons', name: 'java-oembed', version: '0.8.1'

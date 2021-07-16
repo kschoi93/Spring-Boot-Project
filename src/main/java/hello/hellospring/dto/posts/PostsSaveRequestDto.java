@@ -1,6 +1,6 @@
 package hello.hellospring.dto.posts;
 
-import hello.hellospring.domain.posts.Posts;
+import hello.hellospring.domain.entity.Posts;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

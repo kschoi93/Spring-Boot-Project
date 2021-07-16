@@ -9,8 +9,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
-import hello.hellospring.domain.posts.Posts;
-import hello.hellospring.domain.posts.PostsRepository;
+
+import hello.hellospring.domain.entity.Posts;
+import hello.hellospring.domain.repository.PostsRepository;
 import hello.hellospring.dto.posts.PostsSaveRequestDto;
 
 @RunWith(SpringRunner.class)

@@ -12,7 +12,7 @@ function requestUrl() {
                     // 다른 url 입력했을 경우 초기화 해줘야 한다
                     render.innerHTML = "";
                     render2.innerHTML = "";
-
+                    console.log("test");
 
                     // 더 나은 방법은 json에 있는 데이터를 Map으로 저장하고
                     // Map으로 받아서 해당 컬렉션 안에 있는 모든 데이터를 꺼내는게 더 효율적이라 생각한다
