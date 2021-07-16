@@ -1,21 +1,28 @@
+# 언어
 language: java
-jdk:
-  - openjdk11.0.11
 
+# java developer kit version
+jdk:
+  - openjdk11
+
+# 어떤 git branch 에 push되면 작동할 것인가?
 branches:
   only:
     - master
 
+# gradle 권한주기
 before_install:
   - chmod +x gradlew
 
 # Travis CI 서버의 Home
 cache:
   directories:
-    - "$HOME/.m2/repository"
-    - "$HOME/.gradle"
+    - $HOME/.m2/repository
+    - $HOME/.gradle
 
-script: "./gradlew clean build"
+# script는 gradlew clean build 실행된다
+script:
+  - ./gradlew clean build
 
 # CI 실행 완료시 메일로 알람
 notifications:
