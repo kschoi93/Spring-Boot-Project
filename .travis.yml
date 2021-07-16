@@ -3,7 +3,7 @@ language: java
 
 # java developer kit version
 jdk:
-  - openjdk8
+  - openjdk11
 
 # 어떤 git branch 에 push되면 작동할 것인가?
 branches:
