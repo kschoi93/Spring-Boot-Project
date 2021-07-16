@@ -3,7 +3,7 @@ language: java
 
 # java developer kit version
 jdk:
-  - openjdk11
+  - openjdk8
 
 # 어떤 git branch 에 push되면 작동할 것인가?
 branches:
@@ -17,8 +17,8 @@ before_install:
 # Travis CI 서버의 Home
 cache:
   directories:
-    - $HOME/.m2/repository
-    - $HOME/.gradle
+    - "$HOME/.m2/repository"
+    - "$HOME/.gradle"
 
 # script는 gradlew clean build 실행된다
 script:
