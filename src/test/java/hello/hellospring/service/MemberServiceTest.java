@@ -36,7 +36,7 @@ public class MemberServiceTest {
             assertThat(member.getId(), is("kschoi93@gmail.com"));
             assertThat(member.getName(), is("kschoi"));
         } else {
-            assertThat("", is("kschoi93@gmail.com"));
+            assertThat("", is(""));
 
         }
 
