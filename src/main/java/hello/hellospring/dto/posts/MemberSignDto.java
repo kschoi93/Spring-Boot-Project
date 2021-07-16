@@ -1,6 +1,5 @@
 package hello.hellospring.dto.posts;
 
-import java.time.LocalDateTime;
 import java.util.Date;
 
 import hello.hellospring.domain.entity.Member;

@@ -1,7 +1,5 @@
 package hello.hellospring.controller;
 
-import java.util.Optional;
-
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
@@ -9,7 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import hello.hellospring.domain.entity.Member;
-import hello.hellospring.domain.repository.PostsRepository;
 import hello.hellospring.dto.posts.MemberSignDto;
 import hello.hellospring.dto.posts.PostsSaveRequestDto;
 import hello.hellospring.service.MemberService;
@@ -19,8 +16,6 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 @Controller
 public class IndexController {
-
-    private PostsRepository postsRepository;
 
     private PostsService postsService;
     private MemberService memberService;
