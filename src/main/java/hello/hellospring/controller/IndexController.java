@@ -40,17 +40,17 @@ public class IndexController {
 
     @PostMapping("/signIn")
     public String signOk(HttpSession session, MemberSignDto dto) {
-        Member ok = memberService.ok(dto);
+        Member member = memberService.ok(dto);
 
-        if (ok != null) {
+        if (member != null) {
             session.setAttribute("log", "Y");
-            session.setAttribute("logId", ok.getId());
-            session.setAttribute("logName", ok.getName());
+            session.setAttribute("logId", member.getId());
+            session.setAttribute("logName", member.getName());
+            return "redirect:/";
         } else {
             return "sign/failed";
         }
 
-        return "redirect:/";
     }
 
     @GetMapping("/")
