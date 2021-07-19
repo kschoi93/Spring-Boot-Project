@@ -7,7 +7,7 @@
   <body>
     <div class="container">
       <!-- 헤더 -->
-      <div th:replace="/fragments/nav.html :: fragment-nav"></div>
+      <div th:replace="fragments/nav.html :: fragment-nav"></div>
       <div th:if="${session.log == null}">
         <a href="signInForm">로그인폼</a>
       </div>
