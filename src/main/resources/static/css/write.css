@@ -6,3 +6,16 @@
 form {
   margin: 30px 0;
 }
+
+input[type="text"] {
+  width: 100%;
+}
+
+textarea {
+  width: 100%;
+}
+
+#btnContainer {
+  width: 100%;
+  text-align: center;
+}

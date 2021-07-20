@@ -20,7 +20,9 @@
       </div>
 
       <div id="boardContainer">
-        <a href="#" th:href="@{board }"><button>글쓰기</button></a>
+        <th:block th:if="${session.log == 'Y'}">
+          <a href="#" th:href="@{board }"><button>글쓰기</button></a>
+        </th:block>
         <!-- 게시판 -->
         <table>
           <thead>

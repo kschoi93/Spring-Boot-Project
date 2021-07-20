@@ -27,4 +27,10 @@ public class BoardService {
         // page = 0부터 시작한다
         return boardRepository.findAll(PageRequest.of(0, 10, Direction.DESC, "no"));
     }
+
+    // 글 작성
+    @Transactional
+    public Long save(BoardDto dto) {
+        return boardRepository.save(dto.toEntity()).getNo();
+    }
 }

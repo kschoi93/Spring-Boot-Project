@@ -10,6 +10,9 @@ import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.hibernate.annotations.ColumnDefault;
+import org.hibernate.annotations.CreationTimestamp;
+
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
@@ -34,6 +37,7 @@ public class Board {
     private String author;
 
     @Temporal(TemporalType.TIMESTAMP)
+    @CreationTimestamp
     private Date writedate;
 
     private int views;
