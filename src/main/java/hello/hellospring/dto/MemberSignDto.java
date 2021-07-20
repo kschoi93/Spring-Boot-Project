@@ -1,4 +1,4 @@
-package hello.hellospring.dto.posts;
+package hello.hellospring.dto;
 
 import java.util.Date;
 

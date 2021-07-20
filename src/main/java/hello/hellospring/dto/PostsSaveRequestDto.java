@@ -1,4 +1,4 @@
-package hello.hellospring.dto.posts;
+package hello.hellospring.dto;
 
 import hello.hellospring.domain.entity.Posts;
 import lombok.Builder;

@@ -11,7 +11,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import hello.hellospring.domain.entity.Member;
 import hello.hellospring.domain.repository.MemberRepository;
-import hello.hellospring.dto.posts.MemberSignDto;
+import hello.hellospring.dto.MemberSignDto;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -24,7 +24,7 @@ public class MemberServiceTest {
     @Test
     void 아이디_비밀번호로_조회() {
         // given
-        MemberSignDto dto = MemberSignDto.builder().id("kschoi93@gmail.com").pwd("chlrudtlr2@").build();
+        MemberSignDto dto = MemberSignDto.builder().id("test").pwd("test").build();
 
         // when
         Member member = memberRepository.findMember(dto.getId(), dto.getPwd());
@@ -33,8 +33,8 @@ public class MemberServiceTest {
         if (member != null) {
             System.out.println(member.getId());
             System.out.println(member.getName());
-            assertThat(member.getId(), is("kschoi93@gmail.com"));
-            assertThat(member.getName(), is("kschoi"));
+            assertThat(member.getId(), is("test"));
+            assertThat(member.getName(), is("test"));
         } else {
             assertThat("", is(""));
 

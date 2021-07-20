@@ -12,7 +12,7 @@ import static org.hamcrest.Matchers.is;
 
 import hello.hellospring.domain.entity.Posts;
 import hello.hellospring.domain.repository.PostsRepository;
-import hello.hellospring.dto.posts.PostsSaveRequestDto;
+import hello.hellospring.dto.PostsSaveRequestDto;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest

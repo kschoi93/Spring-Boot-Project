@@ -5,7 +5,7 @@ import javax.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import hello.hellospring.domain.repository.PostsRepository;
-import hello.hellospring.dto.posts.PostsSaveRequestDto;
+import hello.hellospring.dto.PostsSaveRequestDto;
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
