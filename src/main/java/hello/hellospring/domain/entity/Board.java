@@ -26,13 +26,13 @@ public class Board {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long no;
 
-    @Column(length = 500, nullable = true)
+    @Column(length = 500, nullable = false)
     private String title;
 
-    @Column(length = 1000, nullable = true)
+    @Column(length = 1000, nullable = false)
     private String content;
 
-    @Column(length = 50, nullable = true)
+    @Column(length = 50, nullable = false)
     private String author;
 
     @Temporal(TemporalType.TIMESTAMP)

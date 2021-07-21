@@ -21,11 +21,20 @@ public class BoardController {
 
     private BoardService boardService;
 
+    // 글쓰기 페이지 이동
     @GetMapping("/board")
     public String boardWrite() {
         return "board/write";
     }
 
+    // 글수정 페이지 이동
+    @GetMapping("/board/edit")
+    public String boardEdit(@RequestParam("no") long no, Model model) {
+        model.addAttribute("editList", boardService.boardSelect(no).get());
+        return "board/edit";
+    }
+
+    // 글저장
     @PostMapping("/board")
     public String boardWrite(HttpSession session, BoardDto dto) {
         dto.setAuthor((String) session.getAttribute("logName"));
@@ -39,23 +48,20 @@ public class BoardController {
         }
     }
 
+    // 글조회
     @GetMapping("/board/{no}")
     public String boardView(@PathVariable("no") long no, Model model) {
         model.addAttribute("viewList", boardService.boardSelect(no).get());
         return "board/view";
     }
 
-    @GetMapping("/board/edit")
-    public String boardEdit(@RequestParam("no") long no, Model model) {
-        model.addAttribute("editList", boardService.boardSelect(no).get());
-        return "board/edit";
-    }
-
+    // 글삭제
     @DeleteMapping("/board/{no}")
     public void boardDelete(@PathVariable("no") long no) {
         boardService.boardDelete(no);
     }
 
+    // 글수정
     @PutMapping("/board")
     public String boardUpdate(BoardDto dto) {
         long result = boardService.boardUpdate(dto);
