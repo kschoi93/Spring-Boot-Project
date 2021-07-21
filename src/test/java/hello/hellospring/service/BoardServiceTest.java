@@ -40,6 +40,33 @@ public class BoardServiceTest {
     }
 
     @Test
+    void 게시글_조회_테스트() {
+        // given
+        int no = 2;
+
+        // when
+        Optional<Board> board = boardRepository.findByNo(no);
+        String title = board.get().getTitle();
+
+        // then
+        assertThat(title, is("test1"));
+
+    }
+
+    @Test
+    void 게시글_삭제_테스트() {
+        // given
+        int no = 1;
+
+        // when
+        boardRepository.deleteByNo(no);
+        Optional<Board> board = boardRepository.findByNo(no);
+
+        // then
+        assertThat(board.isPresent(), is(false));
+    }
+
+    @Test
     void 업데이트_테스트() {
         // given
         int no = 10;

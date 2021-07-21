@@ -23,16 +23,16 @@ public class Member {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long no;
 
-    @Column(length = 50, nullable = true)
+    @Column(length = 50, nullable = false)
     private String id;
 
-    @Column(length = 24, nullable = true)
+    @Column(length = 24, nullable = false)
     private String pwd;
 
     @Temporal(TemporalType.TIMESTAMP)
     private Date regdate;
 
-    @Column(length = 14, nullable = true)
+    @Column(length = 14, nullable = false)
     private String name;
 
     @Builder
