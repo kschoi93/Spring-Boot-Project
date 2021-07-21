@@ -13,23 +13,27 @@ import lombok.Setter;
 @Setter
 public class BoardDto {
 
+    private long no;
     private String title;
     private String content;
     private String author;
     private Date writedate;
     private int views;
 
+    // DTO를 Entity로 반환한다
     public Board toEntity() {
-        return Board.builder().title(title).content(content).author(author).writedate(writedate).views(views).build();
+        return Board.builder().no(no).title(title).content(content).author(author).writedate(writedate).views(views)
+                .build();
     }
 
     @Builder
-    public BoardDto(String title, String content, String author, Date writedate, int views) {
-        this.title = title;
-        this.content = content;
-        this.author = author;
-        this.writedate = writedate;
-        this.views = views;
+    public BoardDto(Board board) {
+        this.no = board.getNo();
+        this.title = board.getTitle();
+        this.content = board.getContent();
+        this.author = board.getAuthor();
+        this.writedate = board.getWritedate();
+        this.views = board.getViews();
     }
 
 }

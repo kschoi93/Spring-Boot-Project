@@ -4,7 +4,7 @@
     <title>Mr Choi</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   </head>
-  <link rel="stylesheet" href="css/index.css" />
+  <link rel="stylesheet" href="/css/index.css" />
   <body>
     <div class="container">
       <!-- 헤더 -->
@@ -12,7 +12,7 @@
 
       <!-- 로그인/로그아웃 -->
       <div th:if="${session.log == null}">
-        <a href="signInForm"><button>로그인</button></a>
+        <a href="sign"><button>로그인</button></a>
       </div>
       <div th:if="${session.log == 'Y'}">
         <span th:text="${session.logName}"></span>
@@ -37,7 +37,7 @@
           <tbody>
             <tr th:each="board : ${boardList}">
               <td><span th:text="${board.no}"></span></td>
-              <td><a href="#" th:href="@{board/view(no=${board.no})}"><span th:text="${board.title}"></a></span></td>
+              <td><a href="#" th:href="@{board/{no}(no=${board.no})}"><span th:text="${board.title}"></a></span></td>
               <td><span th:text="${board.author}"></span></td>
               <td><span th:text="${board.writedate}"></span></td>
               <td><span th:text="${board.views}"></span></td>

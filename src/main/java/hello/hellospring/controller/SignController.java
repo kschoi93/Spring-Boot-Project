@@ -24,13 +24,13 @@ public class SignController {
         return "redirect:/";
     }
 
-    @GetMapping("/signInForm")
+    @GetMapping("sign")
     public String signInForm() {
         return "sign/signInForm";
     }
 
-    @PostMapping("/signIn")
-    public String signOk(HttpSession session, MemberSignDto dto) {
+    @PostMapping("sign-in")
+    public String signIn(HttpSession session, MemberSignDto dto) {
         Member member = memberService.ok(dto);
 
         if (member != null) {
